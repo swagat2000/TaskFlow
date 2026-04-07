@@ -8,7 +8,7 @@
 **TaskFlow** is a lightweight, real-time team task and sprint management system built for small teams who need affordable project tracking without the complexity of enterprise tools like Jira.
 
 **Tech Stack:**
-- Backend: .NET 8 Web API
+- Backend: .NET 9 Web API
 - Frontend: Angular 21
 - Database: SQLite (via EF Core)
 - Real-time: SignalR
@@ -20,7 +20,7 @@
 
 ```
 TaskFlow/                          ← solution root
-├── TaskFlow.API/                  ← .NET 8 Web API project
+├── TaskFlow.API/                  ← .NET 9 Web API project
 ├── TaskFlow.Core/                 ← domain entities, interfaces
 ├── TaskFlow.Infrastructure/       ← EF Core, SQLite, repositories
 ├── TaskFlow.Tests/                ← xUnit unit & integration tests
@@ -253,7 +253,7 @@ Everything in this stack is **100% free and open source.**
 
 | Tool | License | Cost |
 |---|---|---|
-| .NET 8 SDK | MIT | Free |
+| .NET 9 SDK | MIT | Free |
 | EF Core + SQLite | MIT | Free |
 | SignalR | MIT | Free |
 | Angular 21 | MIT | Free |
@@ -266,4 +266,4 @@ For deployment (optional), free tiers are available on **Railway / Render** (API
 
 ---
 
-*Generated for TaskFlow — a resume-ready .NET 8 + Angular 21 + SQLite project.*
+*Generated for TaskFlow — a resume-ready .NET 9 + Angular 21 + SQLite project.*
