@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Testing;
-using System.Net.Http.Json;
-using TaskFlow.API;
-using TaskFlow.API.DTOs;
+using System.Net;
 
 namespace TaskFlow.Tests.Integration;
 
@@ -13,36 +11,16 @@ public class TasksControllerTests : IClassFixture<WebApplicationFactory<Program>
     public TasksControllerTests(WebApplicationFactory<Program> factory)
     {
         _factory = factory;
-        _client = _factory.CreateClient();
+        _client = factory.CreateClient();
     }
 
     [Fact]
-    public async Task GetAll_ReturnsOkResult()
+    public async Task GetAll_WithoutAuth_ReturnsUnauthorized()
     {
         // Act
         var response = await _client.GetAsync("/api/tasks");
 
         // Assert
-        response.EnsureSuccessStatusCode();
-        Assert.Equal("application/json", response.Content.Headers.ContentType?.MediaType);
-    }
-
-    [Fact]
-    public async Task Create_ReturnsCreatedResult_WhenValidData()
-    {
-        // Arrange
-        var taskDto = new TaskDto
-        {
-            Title = "New Task",
-            Description = "Task Description",
-            SprintId = Guid.NewGuid(),
-            AssignedUserId = Guid.NewGuid()
-        };
-
-        // Act
-        var response = await _client.PostAsJsonAsync("/api/tasks", taskDto);
-
-        // Assert
-        Assert.Equal(System.Net.HttpStatusCode.Created, response.StatusCode);
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
     }
 }

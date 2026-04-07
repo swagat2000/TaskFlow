@@ -1,6 +1,6 @@
 using TaskFlow.API.DTOs;
 
-namespace TaskFlow.Core.Interfaces;
+namespace TaskFlow.API.Interfaces;
 
 public interface IAuthService
 {

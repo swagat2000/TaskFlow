@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using TaskFlow.API.DTOs;
+using TaskFlow.API.Interfaces;
 using TaskFlow.Core.Entities;
 using TaskFlow.Core.Interfaces;
 
@@ -29,7 +30,9 @@ public class AuthService : IAuthService
         return new AuthResponseDto
         {
             Token = token,
-            Username = user.Username
+            Username = user.Username,
+            Role = user.Role.ToString(),
+            UserId = user.Id
         };
     }
 
@@ -52,16 +55,20 @@ public class AuthService : IAuthService
         return new AuthResponseDto
         {
             Token = token,
-            Username = user.Username
+            Username = user.Username,
+            Role = user.Role.ToString(),
+            UserId = user.Id
         };
     }
 
     private string GenerateJwtToken(User user)
     {
-        var claims = new[]
+        var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.Username)
+            new Claim(ClaimTypes.Name, user.Username),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, user.Role.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? "defaultkey"));
@@ -71,7 +78,7 @@ public class AuthService : IAuthService
             issuer: _configuration["Jwt:Issuer"],
             audience: _configuration["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.Now.AddDays(1),
+            expires: DateTime.UtcNow.AddDays(7),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);

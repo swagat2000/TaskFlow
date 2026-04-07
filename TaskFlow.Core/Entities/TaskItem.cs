@@ -1,4 +1,5 @@
 using TaskFlow.Core.Enums;
+using TaskStatus = TaskFlow.Core.Enums.TaskStatus;
 
 namespace TaskFlow.Core.Entities;
 

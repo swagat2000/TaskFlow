@@ -1,0 +1,12 @@
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.AssemblyInfoInputs.cache
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.AssemblyInfo.cs
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.csproj.CoreCompileInputs.cache
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.sourcelink.json
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/bin/Debug/net9.0/TaskFlow.Core.deps.json
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/bin/Debug/net9.0/TaskFlow.Core.dll
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/bin/Debug/net9.0/TaskFlow.Core.pdb
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.dll
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/refint/TaskFlow.Core.dll
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/TaskFlow.Core.pdb
+/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/Debug/net9.0/ref/TaskFlow.Core.dll

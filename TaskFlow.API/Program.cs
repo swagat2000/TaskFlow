@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using TaskFlow.API.Hubs;
+using TaskFlow.API.Interfaces;
 using TaskFlow.API.Middleware;
 using TaskFlow.API.Services;
 using TaskFlow.Core.Interfaces;
@@ -13,7 +15,48 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+
+// Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo 
+    { 
+        Title = "TaskFlow API", 
+        Version = "v1",
+        Description = "A lightweight team task and sprint management system",
+        Contact = new OpenApiContact
+        {
+            Name = "TaskFlow",
+            Url = new Uri("https://taskflow.example.com")
+        }
+    });
+
+    // Add JWT authentication to Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme. Enter 'Bearer' [space] and then your token in the text input below.",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+});
 
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -50,6 +93,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Authorization policies based on roles
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"))
+    .AddPolicy("ManagerOrAdmin", policy => policy.RequireRole("Manager", "Admin"))
+    .AddPolicy("DeveloperAndAbove", policy => policy.RequireRole("Developer", "Manager", "Admin"));
+
 // CORS
 builder.Services.AddCors(options =>
 {
@@ -66,7 +115,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskFlow API v1");
+        c.RoutePrefix = string.Empty; // Serve at root
+    });
 }
 
 app.UseHttpsRedirection();
@@ -88,3 +142,6 @@ app.MapControllers();
 app.MapHub<BoardHub>("/boardHub");
 
 app.Run();
+
+// Make Program accessible for integration tests
+public partial class Program { }
