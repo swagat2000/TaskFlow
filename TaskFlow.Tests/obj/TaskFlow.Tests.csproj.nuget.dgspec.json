@@ -4,14 +4,115 @@
     "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj": {}
   },
   "projects": {
-    "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj": {
+    "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/TaskFlow.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj",
-        "projectName": "TaskFlow.Tests",
-        "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj",
+        "projectUniqueName": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/TaskFlow.API.csproj",
+        "projectName": "TaskFlow.API",
+        "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/TaskFlow.API.csproj",
         "packagesPath": "/Users/swagat/.nuget/packages/",
-        "outputPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/obj/",
+        "outputPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/swagat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj"
+              },
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj",
+        "projectName": "TaskFlow.Core",
+        "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj",
+        "packagesPath": "/Users/swagat/.nuget/packages/",
+        "outputPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/swagat/.nuget/NuGet/NuGet.Config"
@@ -43,10 +144,158 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj",
+        "projectName": "TaskFlow.Infrastructure",
+        "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj",
+        "packagesPath": "/Users/swagat/.nuget/packages/",
+        "outputPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/swagat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj",
+        "projectName": "TaskFlow.Tests",
+        "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/TaskFlow.Tests.csproj",
+        "packagesPath": "/Users/swagat/.nuget/packages/",
+        "outputPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/swagat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/TaskFlow.API.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.API/TaskFlow.API.csproj"
+              },
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Core/TaskFlow.Core.csproj"
+              },
+              "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj": {
+                "projectPath": "/Users/swagat/Dotnet/TaskFlow/TaskFlow.Infrastructure/TaskFlow.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.12.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
             },
             "coverlet.collector": {
               "target": "Package",
